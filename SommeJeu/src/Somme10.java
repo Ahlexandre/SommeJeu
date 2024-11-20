@@ -10,28 +10,8 @@ public class Somme10 extends SommeJeu {
             nombre[i] = i+1;
         }
 
-        while(true){
-            afficherGrille();
-            System.out.println("Joueur " + joueurActuel + " place un nombre");
-
-            placerRandomNumber();
-            afficherGrille();
-            System.out.println(" ");
-
-            if (verifierGagnant()) {
-                afficherGrille();
-                System.out.println("Joueur " + joueurActuel + " a gagné !");
-                break;
-            }
-
-            changementJoueur();
-
-            if (estRemplieGrille()) {
-                afficherGrille();
-                System.out.println("Match nul");
-                break;
-            }
-        }
+        super.jouer();
+        
     }
     
 }

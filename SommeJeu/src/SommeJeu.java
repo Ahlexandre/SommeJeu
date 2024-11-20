@@ -102,5 +102,28 @@ public abstract class SommeJeu {
         }
     }
 
-    public abstract void jouer();
+    public void jouer(){
+        while(true){
+            afficherGrille();
+            System.out.println("Joueur " + joueurActuel + " place un nombre");
+
+            placerRandomNumber();
+            afficherGrille();
+            System.out.println(" ");
+
+            if (verifierGagnant()) {
+                afficherGrille();
+                System.out.println("Joueur " + joueurActuel + " a gagné !");
+                break;
+            }
+
+            changementJoueur();
+
+            if (estRemplieGrille()) {
+                afficherGrille();
+                System.out.println("Match nul");
+                break;
+            }
+        }
+    }
 }
